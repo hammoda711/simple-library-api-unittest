@@ -4,12 +4,12 @@ from .serializers import BookSerializer
 from rest_framework.exceptions import NotFound
 # Create your views here.
 
-class BookListAPIView(generics.ListAPIView):
+class BookListView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
 
-class BookRetrieveAPIView(generics.RetrieveAPIView):
+class BookDetailViewView(generics.RetrieveAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
