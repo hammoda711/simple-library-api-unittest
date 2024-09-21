@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     #myapps
     'api',
     'rest_framework',
-     'django_filters',
+    'django_filters',
+     'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -127,5 +128,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        # Other authentication classes
+    ],
 }
